@@ -32,6 +32,15 @@ Bounce buttonDown = Bounce();
 RDA5807 rx; 
 float freq = 0.0;
 
+/*
+struct Data {
+  float value;       // To store a float
+  String name;       // To store a string
+};
+
+const int arraySize = 5; // Size of the array
+Data dataArray[arraySize]; // Array of structs
+*/
 
 void setup() {
   Serial.begin(9600);
@@ -45,8 +54,10 @@ void setup() {
   rx.setLnaPortSel(3);  // Trying improve sensitivity.
   rx.setAFC(true);      // Sets Automatic Frequency Control
   rx.setFmDeemphasis(1); //sorts for Europe broadcasting
-  rx.setFrequency(9730); // Tunes in 103.9 MHz  - Switch to your local favorite station
+  rx.setFrequency(9730); // Tunes in 97.3 MHz  - Switch to your local favorite station
   rx.setVolume(4);
+  //dataArray[0] = {97.3, "LBC"};
+
 
 }
 void loop() {
